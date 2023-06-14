@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class JPAUtill {
 
-	private static EntityManagerFactory factory;
+	private static EntityManagerFactory factory;;
 	private static EntityManager manager;
 	
 	static {
