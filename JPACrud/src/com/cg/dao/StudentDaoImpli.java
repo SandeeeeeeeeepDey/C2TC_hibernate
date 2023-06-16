@@ -10,7 +10,7 @@ public class StudentDaoImpli implements StudentDao {
 	private Student student;
 	
 	public StudentDaoImpli() {
-		manager= JPAUtill.getEntityManager();
+		manager= JPAUtill.getEntityManager(); 
 	}
 
 	@Override

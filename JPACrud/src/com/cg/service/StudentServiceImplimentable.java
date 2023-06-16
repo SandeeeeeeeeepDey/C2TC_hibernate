@@ -10,13 +10,13 @@ public class StudentServiceImplimentable implements StudentService {
 	
 	public StudentServiceImplimentable() {
 		
-		dao=new StudentDaoImpli();
+		dao=new StudentDaoImpli(); // to use Entity manager
 
 	}
 
 	@Override
 	public void addStudent(Student student) {
-		// TODO Auto-generated method stub
+		// Persistent for CREATE
 		dao.beginTrasaction();
 		dao.addStudent(student);
 		dao.commitTransaction();
@@ -25,14 +25,14 @@ public class StudentServiceImplimentable implements StudentService {
 
 	@Override
 	public Student getStudentByID(int id) {
-		// TODO Auto-generated method stub
+		// Find to RETRIEVE
 		Student student= dao.getStudentByID(id);
 		return student;
 	}
 
 	@Override
 	public void updateStudent(Student student) {
-		// TODO Auto-generated method stub
+		// Merge to UPDATE
 		dao.beginTrasaction();
 		dao.updateStudent(student);
 		dao.commitTransaction();
@@ -41,7 +41,7 @@ public class StudentServiceImplimentable implements StudentService {
 
 	@Override
 	public void deleteStudent(Student student) {
-		// TODO Auto-generated method stub
+		// Remove to DELETE
 		dao.beginTrasaction();
 		dao.deleteStudent(student);
 		dao.commitTransaction();

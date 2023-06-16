@@ -10,10 +10,10 @@ public class Client {
 	private static StudentService service;
 	
 	public static void main(String[] args)  {
-		// TODO Auto-generated method stub
-		student= new Student();
 		
-		service= new StudentServiceImplimentable();
+		student= new Student(); // Instantiate Student class
+		
+		service= new StudentServiceImplimentable();  // Instantiate StudentService class
 		
 		Scanner sc=new Scanner(System.in);
 
@@ -96,6 +96,7 @@ public class Client {
 
 	}
 	
+	// Wrapped addStudent()
 	static void  add(int id, String name) {
 		
 		try {

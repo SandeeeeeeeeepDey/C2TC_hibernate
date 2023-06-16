@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-@Entity
-@Table(name="student")
-public class Student implements Serializable {
+@Entity // To notify that this is an Entity
+@Table(name="student") // to name the Table 
+public class Student implements Serializable { // to persist an object to reference type, entities must implement Serializable Interface.
 	
 	private static final long serialVersionUID = 1L;
 	
-		@Id
+		@Id // to notify that the following property is the identity and needs to be unique
 		private int StudentID;
 		private String name;
 	

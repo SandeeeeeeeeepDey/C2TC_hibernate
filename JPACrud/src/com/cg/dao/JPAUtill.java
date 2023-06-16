@@ -10,13 +10,13 @@ public class JPAUtill {
 	private static EntityManager manager;
 	
 	static {
-		factory=Persistence.createEntityManagerFactory("JPA-PU");
+		factory=Persistence.createEntityManagerFactory("JPA-PU"); // Create Entity Manager Factory from Persistence.xml 
 	}
 	
 	public static EntityManager getEntityManager() {
 		
-		if(manager==null || !manager.isOpen())
-			manager=factory.createEntityManager();
+		if(manager==null || !manager.isOpen()) // Check is Entity Manager is already open or is absent.
+			manager=factory.createEntityManager(); // Create Entity Manager
 		
 		return manager;
 	}
