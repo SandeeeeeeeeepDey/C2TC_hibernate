@@ -13,18 +13,21 @@ private static String[] s;
 	private static Service service;
 	
 	public static void main(String[] args) {
+		
 	book= new Book();
 	service= new ServiceImple();
 	Scanner sc=new Scanner(System.in);
-	System.out.println("Which task do you want to perform?\n1: GetBookById\r\n"
+	
+	
+	System.out.println("Which task do you want to perform?\n1: GetBookById\n"
 			+ "2: GetBookCount\n"
 			+ "3: GetBookByTitle\n"
 			+ "4: GetBookByAuthor\n"
 			+ "5: GetAllBooks\n"
 			+ "6: GetBookInPriceRange");
-	
-	int task=sc.nextInt();
+	int task=sc.nextInt(); // to Select task
 	sc.nextLine();
+	
 	
 	switch(task) {
 	case 1:{

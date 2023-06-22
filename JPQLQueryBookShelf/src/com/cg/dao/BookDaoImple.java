@@ -8,8 +8,9 @@ import com.cg.entity.Book;
 
 public class BookDaoImple implements BookDao {
 	private EntityManager em;
+	
 	public BookDaoImple() {
-		em=JPAUtil.getEntityManager();
+		em=JPAUtil.getEntityManager(); // Getting EntityManager from JPAUtil
 	}
 	
 	@Override

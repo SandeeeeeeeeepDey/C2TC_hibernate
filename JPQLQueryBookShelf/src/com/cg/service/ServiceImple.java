@@ -8,8 +8,9 @@ import com.cg.dao.BookDaoImple;
 import com.cg.entity.Book;
 
 public class ServiceImple implements Service {
+	// Since there is not tempering being done with the database, we dont need to begin and commit.
 	
-	private BookDao dao;
+	private BookDao dao; // to get the book information from the transactions defined in the BookDaoImple.
 	public ServiceImple() {
 		dao= new BookDaoImple();
 	}

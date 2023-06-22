@@ -8,13 +8,13 @@ public class JPAUtil {
 	private static EntityManager entityManager;
 	
 	static {
-		factory=Persistence.createEntityManagerFactory("JPA-PU");
+		factory=Persistence.createEntityManagerFactory("JPA-PU"); // EntityManagerFactory with Persistence configuration
 	}
 	
 	public static EntityManager getEntityManager() {
 		
 		if(entityManager==null|| !entityManager.isOpen()) 
-			entityManager=factory.createEntityManager();
+			entityManager=factory.createEntityManager(); //EntityManager from EntityManagerFactory
 		
 		return entityManager;
 	}
