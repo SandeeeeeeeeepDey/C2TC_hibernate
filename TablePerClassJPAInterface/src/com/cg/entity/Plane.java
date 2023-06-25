@@ -1,17 +1,16 @@
 package com.cg.entity;
 
-import java.util.Arrays;
-
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
-@DiscriminatorValue(value="BIKE") // user defined name of row.
-public class Bike extends Vehicle {
-// This table will list the data of bike owners and state if they are eligible to ride or not. 
+@Table(name="plane")
+public class Plane extends Vehicle {
+// Table to store data of Pilots and their eligibility.
 	
 	private static final long serialVersionUID = 1L;
 	private String helmet;
+	private boolean suite;
 	private boolean eligibility;
 
 	public String getHelmet() {
@@ -32,23 +31,29 @@ public class Bike extends Vehicle {
 
 
 	public void eligibilityTest() {
-		String req[]= {"License", "Registration", "Insurance"};
+		String req[]= {"License", "Registration", "Insurance", "Pilot's License"};
 		String has[]=this.getPapersNeeded().split(", ");
-		System.out.println(Arrays.toString(has));
+
 		boolean papers=true;
+		
 		if(has.length!=req.length) papers=false;
-		else {
-			for(int i=0;i<req.length;i++) {
+		else
+			for(int i=0;i<req.length;i++)
 				if(!req[i].toLowerCase().equals(has[i].toLowerCase())) papers=false;
-			}
-		}
-		System.out.println(papers);
 		
 		if(this.helmet.toLowerCase().equals("yes") && this.getLicenseValidUpto()>2023 && papers ) {
 			setEligibility(true);
 		}
 		else setEligibility(false);
 		
+	}
+
+	public boolean hasSuite() {
+		return suite;
+	}
+
+	public void setSuite(boolean suite) {
+		this.suite = suite;
 	}
 
 	

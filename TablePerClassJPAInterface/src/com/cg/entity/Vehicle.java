@@ -17,32 +17,46 @@ import javax.persistence.Table;
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS) // Will create table for each class
 @Table(name="veh") // (Optional) if not user defined, table name will be name of class.
 public class Vehicle implements Serializable{ 
-
+// Table to store data of vehicle drivers
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) // To set serialNumber as auto increment type
 	private int serialNumber;
-	private int Wheels;
-	private String name;
+	private String ownerName;
+	private int licenseValidUpto;
+	private String papersNeeded;
+	
+	// Getters and Setters
 	public int getSerialNumber() {
 		return serialNumber;
 	}
 	public void setSerialNumber(int serialNumber) {
 		this.serialNumber = serialNumber;
 	}
-	public int getWheels() {
-		return Wheels;
+	public int getLicenseValidUpto() {
+		return licenseValidUpto;
 	}
-	public void setWheels(int wheels) {
-		Wheels = wheels;
+	public void setLicenseValidUpto(int licenseValidUpto) {
+		this.licenseValidUpto = licenseValidUpto;
 	}
-	public String getName() {
-		return name;
+	public String getPapersNeeded() {
+		return papersNeeded;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPapersNeeded(String papersNeeded) {
+		this.papersNeeded = papersNeeded;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public String getOwnerName() {
+		return ownerName;
+	}
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	
 	
 	
 }

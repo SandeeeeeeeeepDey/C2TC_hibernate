@@ -14,19 +14,33 @@ public class InheritanceTest {
 		em.getTransaction().begin(); // Begin transaction
 		
 		Vehicle vehicle=new Vehicle(); // setting values for Vehicle
-		vehicle.setName("Rolls-Royce");
-		vehicle.setWheels(4);
+		vehicle.setOwnerName("Personesh");
+		vehicle.setPapersNeeded("License, Registration, Insurance");
+		vehicle.setLicenseValidUpto(2030);
 		em.persist(vehicle); // Creating reference from object in db
+
 		
-		Bike bike=new Bike(); // setting values for Vehicle
-		bike.setName("Harley");
-		bike.setWheels(2);
-		bike.setExtra("Needs helmet");
-		em.persist(bike); // Creating reference from object in db
+		SpaceShip spaceShip=new SpaceShip(); // setting values for SpaceShip
+		spaceShip.setOwnerName("Someonesh");
+		spaceShip.setPapersNeeded("License, Registration, Beetle's Fanclub Membership, Astraunaut's License");
+		spaceShip.setLicenseValidUpto(2040);
+		spaceShip.setSpaceSuite("Yes");
+		spaceShip.setSpoksPermission(true);
+		spaceShip.eligibilityTest();
+		em.persist(spaceShip); // Creating reference from object in db
 		
-		System.out.println("Transaction successful"); // To check is JPA is working correctly
+		SpaceShip spaceShipTwo=new SpaceShip(); // setting values for SpaceShip
+		spaceShipTwo.setOwnerName("Someonelsesh");
+		spaceShipTwo.setPapersNeeded("License, Registration, Beetle's Fanclub Membership, Astraunaut's License");
+		spaceShipTwo.setLicenseValidUpto(2024);
+		spaceShipTwo.setSpaceSuite("Yes");
+		spaceShipTwo.setSpoksPermission(false);
+		spaceShipTwo.eligibilityTest();
+		em.persist(spaceShipTwo); // Creating reference from object in db
 		
 		em.getTransaction().commit(); // Committing the transaction
+		
+		System.out.println("Transaction successful"); // To check is JPA is working correctly
 		
 		em.close(); // close EntityManager
 		factory.close(); // close EntityManagerFactory
